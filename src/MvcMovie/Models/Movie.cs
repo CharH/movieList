@@ -14,7 +14,7 @@ namespace MvcMovie.Models
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage ="Only the letters a-z are allowed when entering a genre.")]
         [Required]
         [StringLength(30)]
         public string Genre { get; set; }
@@ -23,7 +23,7 @@ namespace MvcMovie.Models
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+        [RegularExpression(@"^[A-Z0-9]+[a-zA-Z''-'\s]*$", ErrorMessage ="Only letters and numbers are allowed when entering a rating.")]
         [StringLength(5)]
         public string Rating { get; set; }
     }
