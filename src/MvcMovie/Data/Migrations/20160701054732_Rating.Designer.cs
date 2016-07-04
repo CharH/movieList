@@ -8,9 +8,10 @@ using MvcMovie.Data;
 namespace MvcMovie.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160701054732_Rating")]
+    partial class Rating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rc2-20901")
@@ -176,19 +177,15 @@ namespace MvcMovie.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasAnnotation("MaxLength", 30);
+                    b.Property<string>("Genre");
 
                     b.Property<decimal>("Price");
 
-                    b.Property<string>("Rating")
-                        .HasAnnotation("MaxLength", 5);
+                    b.Property<string>("Rating");
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.Property<string>("Title")
-                        .HasAnnotation("MaxLength", 60);
+                    b.Property<string>("Title");
 
                     b.HasKey("ID");
 

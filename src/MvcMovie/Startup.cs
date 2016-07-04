@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using MvcMovie.Data;
 using MvcMovie.Models;
 using MvcMovie.Services;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace MvcMovie
 {
@@ -83,6 +84,7 @@ namespace MvcMovie
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
